@@ -30,7 +30,13 @@ fn main() {
 
         let stdin = io::stdin();
 
-        let mut input = stdin.lock().lines().next().unwrap().unwrap();
+        let mut input = stdin
+            .lock()
+            .lines()
+            .next()
+            .unwrap()
+            .unwrap()
+            .replace(" ", "");
 
         while !Regex::new(r#"^[^\n,]+(?:,[^\n,]+)*$"#)
             .unwrap()
